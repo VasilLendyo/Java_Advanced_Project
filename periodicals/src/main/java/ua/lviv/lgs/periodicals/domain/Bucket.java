@@ -5,7 +5,7 @@ import java.util.Date;
 public class Bucket {
 
 	private Integer id;
-	private Integer UserId;
+	private Integer userId;
 	private Integer productId;
 	private Date purchaseDate;
 	
@@ -13,14 +13,14 @@ public class Bucket {
 	}
 	
 	public Bucket(Integer userId, Integer productId, Date purchaseDate) {
-		UserId = userId;
+		this.userId = userId;
 		this.productId = productId;
 		this.purchaseDate = purchaseDate;
 	}
 
 	public Bucket(Integer id, Integer userId, Integer productId, Date purchaseDate) {
 		this.id = id;
-		UserId = userId;
+		this.userId = userId;
 		this.productId = productId;
 		this.purchaseDate = purchaseDate;
 	}
@@ -34,11 +34,11 @@ public class Bucket {
 	}
 
 	public Integer getUserId() {
-		return UserId;
+		return userId;
 	}
 
 	public void setUserId(Integer userId) {
-		UserId = userId;
+		this.userId = userId;
 	}
 
 	public Integer getProductId() {
@@ -61,7 +61,7 @@ public class Bucket {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((UserId == null) ? 0 : UserId.hashCode());
+		result = prime * result + ((userId == null) ? 0 : userId.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((productId == null) ? 0 : productId.hashCode());
 		result = prime * result + ((purchaseDate == null) ? 0 : purchaseDate.hashCode());
@@ -77,10 +77,10 @@ public class Bucket {
 		if (getClass() != obj.getClass())
 			return false;
 		Bucket other = (Bucket) obj;
-		if (UserId == null) {
-			if (other.UserId != null)
+		if (userId == null) {
+			if (other.userId != null)
 				return false;
-		} else if (!UserId.equals(other.UserId))
+		} else if (!userId.equals(other.userId))
 			return false;
 		if (id == null) {
 			if (other.id != null)
@@ -102,7 +102,7 @@ public class Bucket {
 
 	@Override
 	public String toString() {
-		return "Bucket [id=" + id + ", UserId=" + UserId + ", productId=" + productId + ", purchaseDate=" + purchaseDate
+		return "Bucket [id=" + id + ", userId=" + userId + ", productId=" + productId + ", purchaseDate=" + purchaseDate
 				+ "]";
 	}
 }

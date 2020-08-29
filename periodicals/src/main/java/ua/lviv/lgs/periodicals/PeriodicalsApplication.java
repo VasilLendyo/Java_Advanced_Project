@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class PeriodicalsApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PeriodicalsApplication.class, args);
+		 SpringApplication.run(PeriodicalsApplication.class, args);
 	}
 
 }

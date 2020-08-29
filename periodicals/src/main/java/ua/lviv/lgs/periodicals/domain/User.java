@@ -1,23 +1,60 @@
 package ua.lviv.lgs.periodicals.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "user")
 public class User {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+	
+	@Column
 	private String email;
+	
+	@Column(name = "first_name")
 	private String firstName;
+	
+	@Column(name = "last_name")
 	private String lastName;
-	private UserRole role;
+	
+	@Column
 	private String password;
+	
+	@Column(name = "password_confirm")
+	private String passwordConfirm;
+	
+	@Enumerated(EnumType.STRING)
+	private UserRole role;
 
 	public User() {
 	}
 
+	public User(User user) {
+		this.id = user.id;
+		this.email = user.email;
+		this.firstName = user.firstName;
+		this.lastName = user.lastName;
+		this.password = user.password;
+		this.passwordConfirm = user.getPasswordConfirm();
+		this.role = user.role;
+	}
+	
 	public User(String email, String firstName, String lastName, UserRole role, String password) {
 		this.email = email;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.role = role;
 		this.password = password;
+		
 	}
 
 	public User(Integer id, String email, String firstName, String lastName, UserRole role, String password) {
@@ -75,6 +112,15 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+
+	public String getPasswordConfirm() {
+		return passwordConfirm;
+	}
+
+	public void setPasswordConfirm(String passwordConfirm) {
+		this.passwordConfirm = passwordConfirm;
 	}
 
 	@Override

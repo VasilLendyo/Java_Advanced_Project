@@ -9,6 +9,6 @@ import org.springframework.context.annotation.ComponentScan;
 public class PeriodicalsApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PeriodicalsApplication.class, args);
+		 SpringApplication.run(PeriodicalsApplication.class, args);
 	}
 }

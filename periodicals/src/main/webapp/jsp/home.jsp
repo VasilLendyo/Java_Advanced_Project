@@ -57,7 +57,7 @@
 
 						<div class="w3-card-4" style="width: 20%; margin: 2%">
 							<img
-								src="https://kaverisias.com/wp-content/uploads/2018/01/catalog-default-img.gif"
+								src="data:image/jpg;base64, ${currentPeriodical.encodedImage}"
 								alt="Alps" style="width: 100%">
 							<div class="w3-container w3-center">
 								<h3>${currentPeriodical.name}</h3>

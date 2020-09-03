@@ -1,6 +1,6 @@
 package ua.lviv.lgs.periodicals.domain;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -31,6 +31,12 @@ public class Bucket {
 
 	public Bucket() {
 	}
+
+	public Bucket(Integer id) {
+		this.id = id;
+	}
+
+
 
 	public Bucket(User user, Periodical periodical, Date purchaseDate) {
 		super();
